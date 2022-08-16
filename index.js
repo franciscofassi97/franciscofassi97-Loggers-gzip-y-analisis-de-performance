@@ -3,6 +3,7 @@ const express = require('express');
 const cluster = require('cluster');
 const os = require('os');
 
+const compression = require('compression');
 
 const argumentos = require('./yargs');
 const MODO = argumentos.modo;
@@ -35,6 +36,7 @@ const MongoStore = require("connect-mongo");
 
 //Middleware
 app.use(express.static("public"));
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
