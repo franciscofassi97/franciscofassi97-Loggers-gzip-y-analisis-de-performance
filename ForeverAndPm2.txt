@@ -1,0 +1,156 @@
+nodemon index.js -p 3000 ---> Inicia servidor en modo fork 
+
+POWERSHEL
+
+>tasklist /fi "imagename eq node.exe"
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                     17476 Console                    1    28.248 KB
+node.exe                     17268 Console                    1    54.560 KB
+
+>Stop-Process -Id 17268
+
+
+
+> nodemon index.js -p 3000 -m CLUSTER
+
+> tasklist /fi "imagename eq node.exe"
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                      9048 Console                    1    28.240 KB
+node.exe                     19124 Console                    1    53.912 KB
+node.exe                     19236 Console                    1    68.448 KB
+node.exe                      2604 Console                    1    68.824 KB
+node.exe                     18072 Console                    1    68.488 KB
+node.exe                     15600 Console                    1    69.140 KB
+
+
+
+> Stop-Process -Id 15600
+
+> tasklist /fi "imagename eq node.exe"
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                      9048 Console                    1    28.188 KB
+node.exe                     19124 Console                    1    54.628 KB
+node.exe                     19236 Console                    1    55.044 KB
+node.exe                      2604 Console                    1    55.120 KB
+node.exe                     18072 Console                    1    54.496 KB
+
+> forever start index.js -p 3001 ---> Inicia servidor en modo fork
+
+> forever list
+
+info:    Forever processes running
+data:        uid  command                            script                                                                                              forever pi
+    forever pid   id  uptime
+    2908    2940      0:0:0:4.796
+
+> tasklist /fi "imagename eq node.exe"     
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                      2908 Console                    1    41.788 KB
+node.exe                      2940 Console                    1    63.944 KB
+
+
+> forever stop 2940      
+> forever list 
+  info:    No forever processes running
+
+> tasklist /fi "imagename eq node.exe"
+INFORMACIÓN: no hay tareas ejecutándose que coincidan con los
+criterios especificados.
+
+>forever index.js -p 3001 -m CLUSTER
+
+>forever list 
+info:    Forever processes running
+data:        uid  command                            script                                                                                                         forever pid   id 	uptime
+2788  18488    0:0:0:34.844
+
+>tasklist /fi "imagename eq node.exe"     
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                      2788 Console                    1    41.744 KB
+node.exe                     18488 Console                    1    67.992 KB
+node.exe                     13888 Console                    1    55.604 KB
+node.exe                      8272 Console                    1    53.936 KB
+node.exe                     13180 Console                    1    57.844 KB
+node.exe                     12228 Console                    1    57.440 KB
+
+> Stop-Process -Id 12228 
+
+
+
+pm2 start indexForever.js --name="Servidor Culster" --watch -i max
+
+> pm2 start index.js --name="Servidor Fork"
+[PM2] Starting C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\ServidorConBalanceDeCarga\index.js in fork_mode (1 instance)
+[PM2] Done.
+┌─────┬──────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name             │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ Servidor Fork    │ default     │ 1.0.0   │ fork    │ 12664    │ 1s     │ 0    │ online    │ 45.3%    │ 34.0mb   │ Usuario  │ disabled │
+└─────┴──────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+> tasklist /fi "imagename eq node.exe"     
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                     16448 Console                    1    31.948 KB
+node.exe                     12664 Console                    1    57.408 KB
+
+
+> pm2 start index.js --name="Servidor Cluster"--watch -i max -- -p 3001
+[PM2] Starting C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\ServidorConBalanceDeCarga\index.js in cluster_mode (0 instance)
+[PM2] Done.
+┌─────┬────────────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                       │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user 
+    │ watching │
+├─────┼────────────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 17272    │ 6s     │ 0    │ online    │ 40.7%    │ 62.1mb   │ Usuario  │ disabled │
+│ 1   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 6448     │ 6s     │ 0    │ online    │ 40.7%    │ 61.0mb   │ Usuario  │ disabled │
+│ 2   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 12140    │ 5s     │ 0    │ online    │ 35.2%    │ 55.2mb   │ Usuario  │ disabled │
+│ 3   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 9380     │ 4s     │ 0    │ online    │ 32.1%    │ 42.7mb   │ Usuario  │ disabled │
+└─────┴────────────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+
+>tasklist /fi "imagename eq node.exe"     
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                     16448 Console                    1    42.988 KB
+node.exe                     17272 Console                    1    58.224 KB
+node.exe                      6448 Console                    1    57.572 KB
+node.exe                     12140 Console                    1    58.660 KB
+node.exe                      9380 Console                    1    57.472 KB
+
+>Stop-process id 9380 
+
+pm2 list
+┌─────┬────────────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                       │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user 
+    │ watching │
+├─────┼────────────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 17272    │ 2m     │ 0    │ online    │ 0%       │ 57.4mb   │ Usuario  │ disabled │
+│ 1   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 6448     │ 2m     │ 0    │ online    │ 0%       │ 56.4mb   │ Usuario  │ disabled │
+│ 2   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 12140    │ 2m     │ 0    │ online    │ 0%       │ 56.7mb   │ Usuario  │ disabled │
+│ 3   │ Servidor Cluster--watch    │ default     │ 1.0.0   │ cluster │ 11420    │ 14s    │ 1    │ online    │ 0%       │ 77.6mb   │ Usuario  │ disabled │
+└─────┴────────────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+
+> tasklist /fi "imagename eq node.exe"
+
+Nombre de imagen               PID Nombre de sesión Núm. de ses Uso de memor
+========================= ======== ================ =========== ============
+node.exe                     16448 Console                    1    42.560 KB
+node.exe                     17272 Console                    1    58.064 KB
+node.exe                      6448 Console                    1    58.312 KB
+node.exe                     12140 Console                    1    57.648 KB
+node.exe                     11420 Console                    1    57.604 KB
+
