@@ -4,17 +4,15 @@ const cluster = require('cluster');
 const os = require('os');
 
 const compression = require('compression');
+const winston = require("./winston");
+
+const { winstonInfo } = require("./winston/winstonLoger")
 
 const argumentos = require('./yargs');
 const MODO = argumentos.modo;
 const PORT = argumentos.port;
 const numeroCpu = os.cpus().length;
 const processID = process.pid;
-
-
-
-
-
 
 const connectDB = require('./database');
 connectDB();
@@ -32,11 +30,10 @@ const MongoStore = require("connect-mongo");
 
 
 
-
-
 //Middleware
 app.use(express.static("public"));
 app.use(compression());
+app.use(winstonInfo);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -68,6 +65,7 @@ io(httpServer);
 /*-----------------Inicio Configuracion de handlebars------------------*/
 const { engine } = require('express-handlebars');
 
+
 app.engine(
 	"hbs",
 	engine({
@@ -96,8 +94,10 @@ app.get("/", (req, res) => {
 	res.redirect("/api/productos");
 });
 
-
-
+// app.use((error, req, res, next) => {
+// 	winston.error(error.message)
+// 	res.status(500).send(error.message);
+// });
 
 /*
 	Inicio servidor segun modo
