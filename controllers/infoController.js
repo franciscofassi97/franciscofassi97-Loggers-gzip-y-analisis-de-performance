@@ -16,6 +16,7 @@ const recuperarInfo = (_, res) => {
 
 
   info.keys = Object.keys(info.args)
+  // console.log(info);
   res.render("info", { info: info })
 }
 module.exports = { recuperarInfo }

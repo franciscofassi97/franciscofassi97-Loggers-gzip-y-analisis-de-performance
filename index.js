@@ -33,7 +33,7 @@ const MongoStore = require("connect-mongo");
 //Middleware
 app.use(express.static("public"));
 app.use(compression());
-app.use(winstonInfo);
+// app.use(winstonInfo);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());

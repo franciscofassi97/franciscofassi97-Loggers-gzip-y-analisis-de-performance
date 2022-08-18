@@ -1,0 +1,288 @@
+Statistical profiling result from ProfCONConsolelog.log, (995 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    713   71.7%          C:\WINDOWS\SYSTEM32\ntdll.dll
+    277   27.8%          C:\Program Files\nodejs\node.exe
+      1    0.1%          C:\WINDOWS\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.2%   50.0%  LazyCompile: *resolve node:path:158:10
+      1    0.1%   25.0%  LazyCompile: *normalizeString node:path:66:25
+      1    0.1%   25.0%  LazyCompile: *dirname node:path:653:10
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      4    0.4%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      7    0.7%  175.0%  GC
+    991   99.6%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    713   71.7%  C:\WINDOWS\SYSTEM32\ntdll.dll
+     36    5.0%    C:\Program Files\nodejs\node.exe
+      3    8.3%      C:\Program Files\nodejs\node.exe
+      1   33.3%        LazyCompile: ~preferredEncodings C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\negotiator\lib\encoding.js:138:28
+      1  100.0%          LazyCompile: ~encodings C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\negotiator\index.js:52:52
+      1  100.0%            LazyCompile: ~Accepts.encoding.Accepts.encodings C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\accepts\index.js:127:40
+      1   33.3%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1   33.3%        Function: ^realpathSync node:fs:2412:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1    2.8%      LazyCompile: ~toString node:buffer:783:46
+      1  100.0%        LazyCompile: ~readFileSync node:fs:450:22
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    2.8%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    2.8%      LazyCompile: ~step C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\express-handlebars\dist\express-handlebars.js:31:18
+      1  100.0%        LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\express-handlebars\dist\express-handlebars.js:30:40
+      1  100.0%          LazyCompile: ~fulfilled C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\express-handlebars\dist\express-handlebars.js:21:27
+      1    2.8%      LazyCompile: ~set node:net:1703:6
+      1  100.0%        C:\Program Files\nodejs\node.exe
+      1  100.0%          LazyCompile: ~Socket node:net:283:16
+      1  100.0%            LazyCompile: ~TLSSocket node:_tls_wrap:462:19
+      1    2.8%      LazyCompile: ~realpathSync node:fs:2412:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1    2.8%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.8%      LazyCompile: ~performInitialHandshake C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connect.js:62:33
+      1  100.0%        Function: ^<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connect.js:31:63
+      1  100.0%          LazyCompile: ~callback C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connect.js:261:31
+      1  100.0%            Function: ^connectHandler C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connect.js:305:28
+      1    2.8%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%        LazyCompile: ~resume C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\readable-stream\lib\_stream_readable.js:902:16
+      1  100.0%          LazyCompile: ~Readable.resume C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\readable-stream\lib\_stream_readable.js:886:38
+      1  100.0%            LazyCompile: ~Readable.on C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\readable-stream\lib\_stream_readable.js:804:34
+      1    2.8%      LazyCompile: ~get node:internal/streams/writable:837:8
+      1  100.0%        LazyCompile: ~parserOnIncoming node:_http_server:852:26
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1    2.8%      LazyCompile: ~get C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\helpers\document\compile.js:177:20
+      1  100.0%        LazyCompile: ~markArraySubdocsPopulated C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\helpers\populate\markArraySubdocsPopulated.js:14:52
+      1  100.0%          LazyCompile: ~Document.$__init C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\document.js:741:38
+      1  100.0%            LazyCompile: ~syncWrapper C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\kareem\index.js:285:30
+      1    2.8%      LazyCompile: ~exports.find C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\@mapbox\node-pre-gyp\lib\pre-binding.js:17:24
+      1  100.0%        Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bcrypt\bcrypt.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    2.8%      LazyCompile: ~encodePathChars node:internal/url:1440:25
+      1  100.0%        Function: ^pathToFileURL node:internal/url:1455:23
+      1  100.0%          LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:391:28
+      1  100.0%            LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:966:23
+      1    2.8%      LazyCompile: ~deserializeObject C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%        LazyCompile: ~deserializeObject C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%          LazyCompile: ~deserialize C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:36:21
+      1  100.0%            LazyCompile: ~deserialize C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\bson.js:175:21
+      1    2.8%      LazyCompile: ~continueScramConversation C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\auth\scram.js:93:35
+      1  100.0%        LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\auth\scram.js:85:80
+      1  100.0%          LazyCompile: ~onMessage C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connection.js:159:14
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\cmap\connection.js:63:44
+      1    2.8%      LazyCompile: ~constructNT node:internal/streams/destroy:250:21
+      1  100.0%        LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.8%      LazyCompile: ~configure C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\winston\lib\winston\logger.js:81:12
+      1  100.0%        LazyCompile: ~Logger C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\winston\lib\winston\logger.js:40:14
+      1  100.0%          LazyCompile: ~DerivedLogger C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\winston\lib\winston\create-logger.js:43:16
+      1  100.0%            LazyCompile: ~module.exports C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\winston\lib\winston\create-logger.js:25:27
+      1    2.8%      LazyCompile: ~compile C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\model.js:4759:33
+      1  100.0%        LazyCompile: ~Mongoose._model C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\index.js:571:37
+      1  100.0%          LazyCompile: ~Mongoose.model C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\index.js:508:36
+      1  100.0%            Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\models\Usuarios.js:1:1
+      1    2.8%      LazyCompile: ~attempt C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\passport\lib\middleware\authenticate.js:180:22
+      1  100.0%        LazyCompile: ~authenticate C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\passport\lib\middleware\authenticate.js:94:31
+      1  100.0%          LazyCompile: ~handle C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\express\lib\router\index.js:293:23
+      1    2.8%      LazyCompile: ~attach C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\engine.io\build\engine.io.js:51:16
+      1  100.0%        LazyCompile: ~initEngine C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\socket.io\dist\index.js:240:15
+      1  100.0%          LazyCompile: ~attach C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\socket.io\dist\index.js:159:11
+      1  100.0%            LazyCompile: ~Server C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\socket.io\dist\index.js:49:16
+      1    2.8%      LazyCompile: ~alphasort C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\common.js:19:20
+      1  100.0%        C:\Program Files\nodejs\node.exe
+      1  100.0%          LazyCompile: ~finish C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\common.js:122:17
+      1  100.0%            LazyCompile: ~Glob._finish C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\glob.js:185:35
+      1    2.8%      LazyCompile: ~Query C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\query.js:93:15
+      1  100.0%        LazyCompile: ~model.Query C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\model.js:4854:25
+      1  100.0%          LazyCompile: ~find C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\model.js:2139:27
+      1  100.0%            LazyCompile: ~getAllData C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\contenedores\ContenedorMongo.js:16:15
+      1    2.8%      LazyCompile: ~Long.add C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\long.js:252:35
+      1  100.0%        LazyCompile: ~Long.subtract C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\long.js:720:40
+      1  100.0%          LazyCompile: ~Long.sub C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\long.js:726:35
+      1  100.0%            LazyCompile: ~Long.compare C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\long.js:291:39
+      1    2.8%      LazyCompile: ~Glob._processGlobStar C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\glob.js:623:44
+      1  100.0%        LazyCompile: ~Glob._process C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\glob.js:295:36
+      1  100.0%          LazyCompile: ~Glob C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\glob.js:117:15
+      1  100.0%            LazyCompile: ~glob C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\glob\glob.js:62:15
+      1    2.8%      LazyCompile: ~EntitySchema.processStrategy C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\normalizr\dist\normalizr.js:113:71
+      1  100.0%        LazyCompile: ~normalize C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\normalizr\dist\normalizr.js:152:40
+      1  100.0%          LazyCompile: ~visit C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\normalizr\dist\normalizr.js:472:27
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\normalizr\dist\normalizr.js:363:30
+      1    2.8%      LazyCompile: ~AbstractOperation C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\operations\operation.js:25:16
+      1  100.0%        LazyCompile: ~CommandOperation C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\operations\command.js:14:16
+      1  100.0%          LazyCompile: ~CreateCollectionOperation C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\operations\create_collection.js:32:16
+      1  100.0%            LazyCompile: ~createCollection C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\db.js:153:21
+      1    2.8%      LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:59154
+      1  100.0%        LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:49020
+      1  100.0%          LazyCompile: ~j C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:4864
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:49002
+      1    2.8%      LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:45657
+      1  100.0%        LazyCompile: ~parse C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:39583
+      1  100.0%          LazyCompile: ~get C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:61245
+      1  100.0%            Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\yargs\index.js:1:1
+      1    2.8%      LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\query.js:2202:43
+      1  100.0%        LazyCompile: ~_wrappedThunk C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\helpers\query\wrapThunk.js:15:32
+      1  100.0%          LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\kareem\index.js:426:16
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.8%      LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\kareem\index.js:160:29
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.8%      Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\compression\node_modules\safe-buffer\index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.8%      Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\@colors\colors\lib\colors.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.8%      Function: ^realpathSync node:fs:2412:22
+      1  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1    2.8%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+
+    277   27.8%  C:\Program Files\nodejs\node.exe
+    238   85.9%    C:\Program Files\nodejs\node.exe
+     75   31.5%      Function: ^compileFunction node:vm:308:25
+     74   98.7%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     74  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+     72   97.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      2    2.7%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.3%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+     31   13.0%      Function: ^stat node:internal/modules/cjs/loader:151:14
+     21   67.7%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     21  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     21  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     10   32.3%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      8   80.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      7   87.5%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   12.5%            LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      1   10.0%          LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1  100.0%            Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1   10.0%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     18    7.6%      Function: ^realpathSync node:fs:2412:22
+     18  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+     16   88.9%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     14   87.5%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      2   12.5%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      2   11.1%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     15    6.3%      C:\Program Files\nodejs\node.exe
+      2   13.3%        Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      2  100.0%          Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      2  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1    6.7%        LazyCompile: ~trimControlChars C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\whatwg-url\lib\url-state-machine.js:445:26
+      1  100.0%          Function: ^URLStateMachine C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\whatwg-url\lib\url-state-machine.js:481:25
+      1  100.0%            LazyCompile: ~module.exports.basicURLParse C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\whatwg-url\lib\url-state-machine.js:1206:41
+      1    6.7%        LazyCompile: ~setup C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\connect-mongo\node_modules\debug\src\common.js:7:15
+      1  100.0%          Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\connect-mongo\node_modules\debug\src\node.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1    6.7%        LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:488:36
+      1  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:553:30
+      1  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:553:30
+      1    6.7%        LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:391:28
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:966:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1039:24
+      1    6.7%        LazyCompile: ~checkServer C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\sdam\monitor.js:143:21
+      1  100.0%          Function: ^<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\sdam\monitor.js:229:12
+      1  100.0%            Function: ^executeAndReschedule C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongodb\lib\utils.js:702:34
+      1    6.7%        LazyCompile: ~_pathToPositionalSyntax C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\schema.js:1025:33
+      1  100.0%          LazyCompile: ~Schema.path C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\schema.js:809:33
+      1  100.0%            LazyCompile: ~add C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\schema.js:534:36
+      1    6.7%        LazyCompile: ~Mime.lookup C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mime\mime.js:69:33
+      1  100.0%          LazyCompile: ~type C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\send\index.js:825:43
+      1  100.0%            LazyCompile: ~send C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\send\index.js:602:43
+      1    6.7%        LazyCompile: ~Connection.openUri C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\connection.js:675:40
+      1  100.0%          LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\index.js:378:49
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:22
+      1    6.7%        LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:2027
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            LazyCompile: ~h C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs\build\index.cjs:1:1448
+      1    6.7%        LazyCompile: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs-parser\build\index.cjs:240:48
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            LazyCompile: ~parse C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\yargs-parser\build\index.cjs:108:10
+      1    6.7%        Function: ~<anonymous> C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\npmlog\log.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    6.7%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1    6.7%        Function: ^deserializeObject C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%          Function: ^deserializeObject C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%            Function: ^deserializeObject C:\Users\Usuario\Desktop\MernStack\Cursos\Node.js\Clases\Loggers, gzip y análisis de performance\node_modules\bson\lib\parser\deserializer.js:65:27
+     11    4.6%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      9   81.8%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   22.2%          Function: ~<anonymous> node:http:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2   22.2%          Function: ~<anonymous> node:crypto:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   11.1%          LazyCompile: ~lazyLoadStreams node:fs:2845:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:2988:17
+      1   11.1%          LazyCompile: ~get BlockList node:net:1775:16
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1   11.1%          Function: ~<anonymous> node:tty:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   11.1%          Function: ~<anonymous> node:child_process:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   11.1%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2   18.2%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7    2.9%      Function: ^readSync node:fs:684:18
+      7  100.0%        Function: ^tryReadSync node:fs:429:21
+      7  100.0%          Function: ^readFileSync node:fs:450:22
+      6   85.7%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   14.3%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      7    2.9%      Function: ^read node:internal/modules/package_json_reader:16:14
+      7  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      5   71.4%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      5  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2   28.6%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      5    2.1%      Function: ^openSync node:fs:576:18
+      5  100.0%        Function: ^readFileSync node:fs:450:22
+      4   80.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      4  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1   20.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      5    1.8%    Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      4   80.0%      Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      4  100.0%        Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      4  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      4  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   20.0%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+
