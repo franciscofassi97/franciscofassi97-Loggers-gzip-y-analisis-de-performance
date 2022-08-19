@@ -16,7 +16,10 @@ const recuperarInfo = (_, res) => {
 
 
   info.keys = Object.keys(info.args)
-  // console.log(info);
+  // for (let i = 0; i < 100; i++) {
+
+  //   console.log(i);
+  // }
   res.render("info", { info: info })
 }
 module.exports = { recuperarInfo }
